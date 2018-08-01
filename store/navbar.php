@@ -137,7 +137,7 @@
             
             <!-- Admin Button -->
             <form class="form-inline ml-5">
-                <button class="btn navbar-btn" type="button">Admin</button>
+                <a href="../admin/login.php"><button class="btn navbar-btn" type="button">Admin</button></a>
             </form>
             
           </div>
