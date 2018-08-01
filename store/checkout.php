@@ -39,6 +39,11 @@
             $stmt->execute();
         }
         
+        // Clear the cart since the purchase has been completed
+        unset($_SESSION['cart']);
+        
+        // Go to the purchase confirmation page
+        header('Location: purchase-confirmation.php');
     }
     
     function displaySummery() {
@@ -52,6 +57,16 @@
             echo  $plant['plantName']." - $".$plant['priceDollar'].".".$plant['priceCent']." x (".$plant['quantity'].")"." = $".$subtotal."<br>";
             $total += $subtotal;
         }
+        
+        $taxRate = .065;
+        $taxCost = bcdiv(($total * .065), 1, 2);
+        $total += $taxCost;
+        echo "Tax: $".$taxCost."<br>";
+        
+        $shippingCost = 5;
+        $total += $shippingCost;
+        echo "Shipping: $".$shippingCost."<br>";
+        
         echo "<br><strong>Total: $".$total."</strong>";
         echo "</div>";
     }
