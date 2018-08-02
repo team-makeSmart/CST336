@@ -20,7 +20,7 @@
     }
     
     function displayCart() {
-        if (isset($_SESSION['cart'])) {
+        if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
             
             echo "<table class='table table-hover'>";
             echo "<thead>
@@ -60,7 +60,11 @@
                 echo "</tr>";
             }
             echo "</table>";
+        } else {
+            echo "<br><br><br><br><br><br>";
+            echo "<div class='text-center'><h4>Your cart is empty</h4></div>";    
         }
+        
     } // end displayCart()
     
     function displayCartTotal() {
@@ -108,6 +112,6 @@
         ?>
 
     
-    <script language="javascript" type="text/javascript" src="functions.js"></script>
+    <script language="javascript" type="text/javascript" src="inc/functions.js"></script>
     </body>
 </html>

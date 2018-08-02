@@ -40,6 +40,6 @@
         </div>
 
     
-        <script language="javascript" type="text/javascript" src="functions.js"></script>
+        <script language="javascript" type="text/javascript" src="inc/functions.js"></script>
         </body>
 </html>

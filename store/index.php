@@ -29,9 +29,46 @@
       
         <?php
           include 'navbar.php';
+          
+          $plantImages = ['nightshade-lg.jpg', 'poisonoak-lg.png', 'venus-lg.jpg'];
         ?>
+        
+        <br><br>
+        
+            
+            <div id="plantCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#plantCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#plantCarousel" data-slide-to="1"></li>
+                <li data-target="#plantCarousel" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <?php
+                    for ($i = 0; $i < count($plantImages); $i++) {
+                        echo "<div class='carousel-item";
+                        echo ($i == 0) ? " active" : "";
+                        echo "'>";
+                        echo "<img src='../img/".$plantImages[$i]."'>";
+                        echo "</div>";
+                    }
+                ?>
+              </div>
+              <a class="carousel-control-prev" href="#plantCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#plantCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+
+        
+        <br><br>
+        
+        
 
     
-    <script language="javascript" type="text/javascript" src="functions.js"></script>
+    <script language="javascript" type="text/javascript" src="inc/functions.js"></script>
     </body>
 </html>
