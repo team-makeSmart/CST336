@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `purchase` (
   INDEX `fk_purchase_customer_idx` (`customer_idcustomer` ASC),
   CONSTRAINT `fk_purchase_customer`
     FOREIGN KEY (`customer_idcustomer`)
-    REFERENCES `plantdb`.`customer` (`idcustomer`)
+    REFERENCES `customer` (`idcustomer`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -91,12 +91,12 @@ CREATE TABLE IF NOT EXISTS `lineItem` (
   INDEX `fk_purchase_has_plant_purchase1_idx` (`purchase_idpurchase` ASC),
   CONSTRAINT `fk_purchase_has_plant_plant1`
     FOREIGN KEY (`plant_idplant`)
-    REFERENCES `plantdb`.`plant` (`idplant`)
+    REFERENCES `plant` (`idplant`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_purchase_has_plant_purchase1`
     FOREIGN KEY (`purchase_idpurchase`)
-    REFERENCES `plantdb`.`purchase` (`idpurchase`)
+    REFERENCES `purchase` (`idpurchase`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
