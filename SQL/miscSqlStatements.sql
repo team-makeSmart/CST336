@@ -6,11 +6,18 @@
 -- ----------------------------------------------------------------SELECT SQL STATEMENTS
 -- ----------------------------------------------------------------And MISC SQL STATEMENTS
 
--- Basic select statements
+-- Basic select statements ----------------------
 SELECT * FROM admin;
 SELECT * FROM customer;
 SELECT * FROM lineItem;
 SELECT * FROM plant;
 SELECT * FROM purchase;
+
+
+-- Basic drop statements ----------------------
+DROP TABLE admin;
+DROP TABLE customer;
+DROP TABLE plant;
+DROP TABLE purchase;
 
 -- Please put any useful SQL statements here, so that others may reference.
