@@ -13,23 +13,9 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Table `admin`
 -- -----------------------------------------------------
--- -----------------------------------------------------
--- Schema plantdb
--- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `plantdb` ;
-
--- -----------------------------------------------------
--- Schema plantdb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `plantdb` DEFAULT CHARACTER SET utf8 ;
-USE `plantdb` ;
-
--- -----------------------------------------------------
--- Table `plantdb`.`admin`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `plantdb`.`admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `idadmin` INT(11) NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(25) NOT NULL,
   `password` VARCHAR(40) NOT NULL,
@@ -41,9 +27,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `plantdb`.`customer`
+-- Table `customer`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `plantdb`.`customer` (
+CREATE TABLE IF NOT EXISTS `customer` (
   `idcustomer` INT(11) NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(25) NULL DEFAULT ' ',
   `lastName` VARCHAR(25) NULL DEFAULT ' ',
@@ -57,9 +43,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `plantdb`.`plant`
+-- Table `plant`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `plantdb`.`plant` (
+CREATE TABLE IF NOT EXISTS `plant` (
   `idplant` INT(11) NOT NULL AUTO_INCREMENT,
   `plantName` VARCHAR(45) NOT NULL DEFAULT ' ',
   `plantDesc` VARCHAR(225) NOT NULL DEFAULT ' ',
@@ -73,9 +59,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `plantdb`.`purchase`
+-- Table `purchase`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `plantdb`.`purchase` (
+CREATE TABLE IF NOT EXISTS `purchase` (
   `idpurchase` INT(11) NOT NULL AUTO_INCREMENT,
   `purchaseDate` DATETIME NOT NULL,
   `customer_idcustomer` INT(11) NOT NULL,
@@ -92,9 +78,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `plantdb`.`lineItem`
+-- Table `lineItem`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `plantdb`.`lineItem` (
+CREATE TABLE IF NOT EXISTS `lineItem` (
   `purchase_idpurchase` INT(11) NOT NULL,
   `plant_idplant` INT(11) NOT NULL,
   `quantity` INT(11) NOT NULL DEFAULT '0',
